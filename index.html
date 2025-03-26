@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Kerlon</title>
+    <style>
+        /* Estilos do site */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .project {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: calc(33% - 20px);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 15px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .project {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project {
+                width: 100%;
+            }
+        }
+
+        /* Estilos do modal de contato */
+        #modal-contato {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            max-width: 90%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .modal-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .modal-content label {
+            font-size: 1rem;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .modal-content input, .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .modal-content button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .modal-content button:hover {
+            background-color: #555;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .close:hover {
+            color: #ff0000;
+        }
+
+        /* Estilos do botão "Entrar em Contato" */
+        .btn-contato {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-contato:hover {
+            background-color: #218838;
+            transform: translateY(-5px);
+        }
+
+        .btn-contato:active {
+            transform: translateY(0);
+        }
+
+        /* Centralização do botão "Entrar em Contato" */
+        .section-btn-contato {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Portfólio de Kerlon</h1>
+        <p>Bem-vindo ao meu portfólio online! Aqui estão alguns dos meus projetos mais recentes.</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Seção sobre mim -->
+        <section class="section" id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Oi, meu nome é Kerlon! Sou um desenvolvedor web apaixonado por criar sites e aplicativos modernos. Tenho experiência em HTML, CSS, JavaScript e outras tecnologias web. Meu objetivo é construir soluções simples, intuitivas e eficazes para os usuários. Sempre estou buscando aprender mais e melhorar minhas habilidades para enfrentar novos desafios.</p>
+        </section>
+
+        <!-- Seção de projetos -->
+        <section class="section" id="projetos">
+            <h2>Meus Projetos</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x200" alt="Projeto 1">
+                    <div class="project-content">
+                        <h3 class="project-title">Projeto 1 - Site Institucional</h3>
+                        <p class="project-description">Este projeto foi desenvolvido para uma empresa fictícia. Criado com HTML, CSS e JavaScript, o site oferece uma visão clara da missão e valores da empresa, além de permitir o contato com os clientes.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x200" alt="Projeto 2">
+                    <div class="project-content">
+                        <h3 class="project-title">Projeto 2 - Portfólio Interativo</h3>
+                        <p class="project-description">Este é meu portfólio online, desenvolvido de forma interativa. Ele permite que os visitantes vejam detalhes dos projetos, com uma interface limpa e intuitiva.</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="https://via.placeholder.com/300x200" alt="Projeto 3">
+                    <div class="project-content">
+                        <h3 class="project-title">Projeto 3 - Aplicativo de Lista de Tarefas</h3>
+                        <p class="project-description">Desenvolvi um aplicativo de lista de tarefas para ajudar as pessoas a se organizarem melhor no seu dia a dia. O aplicativo permite adicionar, editar e excluir tarefas de maneira simples.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção do botão "Entrar em Contato" -->
+        <section class="section-btn-contato">
+            <a href="javascript:void(0);" class="btn-contato" onclick="openModal()">Entrar em Contato</a>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Kerlon - Todos os direitos reservados</p>
+        <p><a href="https://www.linkedin.com" target="_blank">LinkedIn</a> | <a href="https://github.com" target="_blank">GitHub</a></p>
+    </footer>
+
+    <!-- Modal de Contato -->
+    <div id="modal-contato">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Contato</h2>
+            <form id="form-contato">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome" name="nome" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <label for="mensagem">Mensagem:</label><br>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir o modal
+        function openModal() {
+            document.getElementById('modal-contato').style.display = 'flex';
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            document.getElementById('modal-contato').style.display = 'none';
+        }
+
+        // Validação de formulário simples
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            if(nome && email && mensagem) {
+                alert('Mensagem enviada com sucesso!');
+                closeModal(); // Fecha o modal após enviar
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+    </script>
+
+</body>
+</html>
